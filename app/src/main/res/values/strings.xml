@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">task1IntersvyazCourse</string>
+    <string name="btn_battery">Battery info</string>
+    <string name="gps_info">Geoposition</string>
 </resources>

@@ -1,8 +1,11 @@
 package com.x1opya.task1intersvyazcourse;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this,"16 минут уже прошло",Toast.LENGTH_LONG).show();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(new ChargingReciver(),filter);
+        //Toast.makeText(this,"16 минут уже прошло",Toast.LENGTH_LONG).show();
         Log.println(Log.ASSERT, TAG,"onCreate");
     }
 
@@ -50,5 +55,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.println(Log.ASSERT,TAG,"onPause");
+    }
+
+    public void onClickShowBatteryInfo(View view) {
+        startActivity(new Intent(this,BatteryActivity.class));
+    }
+
+    public void onClickShowGeoInfo(View view) {
+        startActivity(new Intent(this,GeoActivity.class));
     }
 }

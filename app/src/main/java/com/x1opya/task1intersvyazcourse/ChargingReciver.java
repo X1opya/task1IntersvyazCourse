@@ -23,6 +23,7 @@ public class ChargingReciver extends BroadcastReceiver {
         else{
 
         }
-
     }
+
+
 }

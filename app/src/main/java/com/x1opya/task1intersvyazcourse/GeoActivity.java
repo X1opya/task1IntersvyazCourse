@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import android.widget.Toast;
 public class GeoActivity extends AppCompatActivity implements LocationListener {
 
     TextView tvGeo;
+    ProgressBar progressBar;
     LocationManager mLocationManager;
 
 
@@ -32,6 +34,7 @@ public class GeoActivity extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geo);
 
+        progressBar = findViewById(R.id.progressBar2);
         tvGeo = findViewById(R.id.tv_geo);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
@@ -103,6 +106,8 @@ public class GeoActivity extends AppCompatActivity implements LocationListener {
     }
 
     private void updateUI(Location l){
+        progressBar.setVisibility(View.GONE);
+        tvGeo.setVisibility(View.VISIBLE);
         tvGeo.setText("Долгота  " + l.getLongitude()+"\n"
                 + "Широта " + l.getLatitude());
     }

@@ -1,4 +1,4 @@
-package com.x1opya.task1intersvyazcourse;
+package com.x1opya.task1intersvyazcourse.Battery;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

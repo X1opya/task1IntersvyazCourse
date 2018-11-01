@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.x1opya.task1intersvyazcourse.Api.ApiActivity;
+import com.x1opya.task1intersvyazcourse.Battery.BatteryActivity;
+import com.x1opya.task1intersvyazcourse.Battery.ChargingReciver;
 
 public class MainActivity extends AppCompatActivity {
     private String TAG = "Life Ciycle";
@@ -83,5 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickShowGeoInfo(View view) {
         startActivity(new Intent(this,GeoActivity.class));
+    }
+
+    public void onClickShowApi(View view) {
+        Intent intent = new Intent(this, ApiActivity.class);
+        startActivity(intent);
     }
 }

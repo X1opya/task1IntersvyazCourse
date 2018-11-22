@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.x1opya.task1intersvyazcourse.Api.ApiActivity;
+import com.x1opya.task1intersvyazcourse.Auth.LoginActivity;
 import com.x1opya.task1intersvyazcourse.Battery.BatteryActivity;
 import com.x1opya.task1intersvyazcourse.Battery.ChargingReciver;
 
@@ -91,5 +92,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClickShowApi(View view) {
         Intent intent = new Intent(this, ApiActivity.class);
         startActivity(intent);
+    }
+
+    public void onClickAuth(View view) {
+        startActivity(new Intent(this,LoginActivity.class));
     }
 }

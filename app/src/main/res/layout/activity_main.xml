@@ -73,7 +73,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:onClick="onClickAuth"
-        android:text="Discord Auth"
+        android:text="Instagram Auth"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toTopOf="@+id/button3" />
